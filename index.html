@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush Chandrakar — Mining Engineer Portfolio</title>
+<!-- index.html - Save this file as index.html -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F172A;--bg2:#1E293B;--bgc:#111827;--bge:#1a2744;--acc:#F59E0B;--accd:#b07d1a;--accg:rgba(245,158,11,0.12);--tp:#E2E8F0;--ts:#94A3B8;--tm:#64748B;--brd:rgba(148,163,184,0.1);--brda:rgba(245,158,11,0.3);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--tp);font-family:'Poppins',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(148,163,184,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:1rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(15,23,42,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--brd);}
+.nav-logo{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--tp);letter-spacing:.05em;}
+.nav-logo span{color:var(--acc);}
+.nav-links{display:flex;gap:1.6rem;list-style:none;}
+.nav-links a{font-size:.73rem;font-weight:500;color:var(--ts);text-decoration:none;letter-spacing:.04em;transition:color .3s;}
+.nav-links a:hover{color:var(--acc);}
+.nav-dl{padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;transition:all .3s;}
+.nav-dl:hover{background:#d97706;}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(245,158,11,0.06) 0%,transparent 60%);z-index:1;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 4rem 5rem;position:relative;z-index:2;}
+.hero-ey{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;color:var(--acc);letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:.7rem;}
+.hero-ey::before{content:'';width:2rem;height:1px;background:var(--acc);}
+.hero-name{font-family:'Montserrat',sans-serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:900;line-height:1.0;color:var(--tp);margin-bottom:.5rem;}
+.hero-name .hi{color:var(--acc);}
+.hero-title{font-size:.95rem;color:var(--ts);font-weight:400;margin-bottom:1.6rem;}
+.hero-desc{font-size:.9rem;color:var(--ts);max-width:460px;line-height:1.8;margin-bottom:2.2rem;}
+.hero-stats{display:flex;gap:2.5rem;margin-bottom:2.2rem;flex-wrap:wrap;}
+.stat{display:flex;flex-direction:column;}
+.stat-num{font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:800;color:var(--acc);line-height:1;}
+.stat-label{font-size:.62rem;font-weight:500;color:var(--tm);text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-p{padding:.8rem 1.8rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block;}
+.btn-p:hover{background:#d97706;transform:translateY(-2px);}
+.btn-o{padding:.8rem 1.8rem;border:1px solid var(--brda);color:var(--acc);font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block;}
+.btn-o:hover{background:var(--accg);}
+.hero-right{position:relative;overflow:hidden;}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.9;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,transparent 35%),linear-gradient(to top,var(--bg) 0%,transparent 20%);}
+.hero-badge{position:absolute;bottom:3rem;left:-0.5rem;background:var(--bgc);border:1px solid var(--brda);padding:1rem 1.5rem;z-index:3;}
+.hero-badge-top{font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;color:var(--acc);text-transform:uppercase;letter-spacing:.1em;}
+.hero-badge-bot{font-size:.8rem;color:var(--ts);margin-top:.2rem;}
+.sec{padding:5.5rem 5rem;max-width:1400px;margin:0 auto;position:relative;z-index:2;}
+.sec-full{padding:5.5rem 0;position:relative;z-index:2;}
+.sec-inner{max-width:1400px;margin:0 auto;padding:0 5rem;}
+.lbl{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;color:var(--acc);letter-spacing:.25em;text-transform:uppercase;margin-bottom:.7rem;display:flex;align-items:center;gap:.8rem;}
+.lbl::after{content:'';flex:1;height:1px;background:var(--brd);max-width:60px;}
+.sec-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:800;line-height:1.2;color:var(--tp);margin-bottom:1rem;}
+.sec-title .em{color:var(--acc);}
+.sec-sub{font-size:.9rem;color:var(--ts);max-width:600px;line-height:1.8;margin-bottom:3rem;}
+.divider{height:1px;background:var(--brd);max-width:1400px;margin:0 auto;position:relative;z-index:2;}
+.bg-dark{background:var(--bg2);}
+.bg-card{background:var(--bgc);}
+.about-grid{display:grid;grid-template-columns:360px 1fr;gap:5rem;align-items:start;}
+.about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border:1px solid var(--brd);}
+.about-photo-wrap{position:relative;}
+.about-accent{position:absolute;bottom:-1.2rem;right:-1.2rem;width:65%;height:65%;border:1px solid var(--brda);opacity:.35;z-index:-1;}
+.about-text p{color:var(--ts);font-size:.9rem;line-height:1.85;margin-bottom:1.1rem;}
+.about-text p.lead{font-size:1.05rem;color:var(--tp);font-weight:400;}
+.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem;}
+.chip{padding:.35rem .9rem;border:1px solid var(--brd);font-size:.65rem;font-weight:500;color:var(--ts);transition:all .3s;}
+.chip:hover{border-color:var(--brda);color:var(--acc);}
+.tl{position:relative;margin-top:3rem;}
+.tl::before{content:'';position:absolute;left:186px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--acc),var(--brd) 70%,transparent);}
+.tl-item{display:grid;grid-template-columns:186px 1fr;gap:2.5rem;margin-bottom:3.5rem;position:relative;}
+.tl-item::before{content:'';position:absolute;left:182px;top:.3rem;width:9px;height:9px;background:var(--acc);border-radius:50%;box-shadow:0 0 0 3px var(--bg),0 0 0 5px rgba(245,158,11,.25);}
+.tl-yr{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:var(--acc);line-height:1.2;text-align:right;padding-right:1.2rem;}
+.tl-org{font-size:.65rem;color:var(--tm);margin-top:.3rem;text-align:right;line-height:1.4;padding-right:1.2rem;}
+.tl-h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:var(--tp);margin-bottom:.45rem;}
+.tl-p{font-size:.85rem;color:var(--ts);line-height:1.8;margin-bottom:.7rem;}
+.tl-stat{display:inline-flex;align-items:center;gap:.7rem;background:var(--bge);border-left:2px solid var(--acc);padding:.55rem 1.1rem;margin:.4rem 0;}
+.tl-stat-n{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:var(--acc);}
+.tl-stat-t{font-size:.65rem;font-weight:500;color:var(--tm);text-transform:uppercase;letter-spacing:.07em;max-width:150px;line-height:1.3;}
+.tl-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.7rem;}
+.tl-tag{padding:.2rem .65rem;background:rgba(148,163,184,.05);border:1px solid var(--brd);font-size:.58rem;font-weight:500;color:var(--tm);letter-spacing:.05em;}
+.exp-box{background:var(--bge);border:1px solid var(--brda);padding:1.2rem;margin-top:.8rem;}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
+.exp-lbl{font-size:.58rem;font-weight:600;color:var(--tm);text-transform:uppercase;letter-spacing:.1em;}
+.exp-val{font-size:.78rem;color:var(--tp);font-weight:500;}
+.ach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.5rem;}
+.ach-card{background:var(--bgc);border:1px solid var(--brd);padding:2.2rem;transition:all .4s;position:relative;overflow:hidden;}
+.ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--acc),transparent);opacity:0;transition:opacity .3s;}
+.ach-card:hover{border-color:var(--brda);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.3);}
+.ach-card:hover::before{opacity:1;}
+.ach-icon{font-size:2rem;margin-bottom:1rem;display:block;}
+.ach-badge{display:inline-block;padding:.2rem .7rem;background:var(--accg);border:1px solid var(--brda);font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;color:var(--acc);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem;}
+.ach-title{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:var(--tp);margin-bottom:.5rem;}
+.ach-story{font-size:.82rem;color:var(--ts);line-height:1.75;}
+.ach-skills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.8rem;}
+.ach-skill{font-size:.58rem;font-weight:500;color:var(--tm);padding:.18rem .55rem;border:1px solid var(--brd);}
+.vol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}
+.vol-card{background:var(--bgc);border:1px solid var(--brd);padding:1.8rem;transition:border-color .3s;}
+.vol-card:hover{border-color:var(--brda);}
+.vol-yr{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:800;color:var(--acc);margin-bottom:.4rem;}
+.vol-title{font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:700;color:var(--tp);margin-bottom:.7rem;}
+.vol-list{list-style:none;}
+.vol-list li{font-size:.75rem;color:var(--ts);padding-left:.9rem;position:relative;line-height:1.5;margin-bottom:.4rem;}
+.vol-list li::before{content:'▸';position:absolute;left:0;color:var(--acc);font-size:.6rem;}
+.learn-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:1.8rem;}
+.learn-pill{background:var(--bge);border:1px solid var(--brd);padding:1.1rem;text-align:center;}
+.learn-icon{font-size:1.4rem;margin-bottom:.4rem;}
+.learn-text{font-size:.72rem;font-weight:400;color:var(--ts);}
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.cert-card{background:var(--bgc);border:1px solid var(--brd);overflow:hidden;cursor:pointer;transition:all .4s;}
+.cert-card:hover{border-color:var(--brda);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.cert-preview{position:relative;overflow:hidden;aspect-ratio:3/4;}
+.cert-preview img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s;filter:brightness(.88);}
+.cert-card:hover .cert-preview img{transform:scale(1.04);filter:brightness(.95);}
+.cert-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,23,42,.95) 0%,transparent 50%);display:flex;align-items:flex-end;padding:1rem;}
+.cert-name{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;color:var(--tp);}
+.cert-issuer{font-size:.64rem;color:var(--acc);margin-top:.15rem;}
+.cert-body{padding:1.1rem;}
+.cert-desc{font-size:.75rem;color:var(--ts);line-height:1.6;}
+.cert-imp{margin-top:.7rem;padding:.5rem .9rem;background:var(--bge);border-left:2px solid var(--acc);font-size:.68rem;color:var(--tm);font-style:italic;}
+.masonry{columns:3;column-gap:1rem;margin-top:2rem;}
+.photo-block{break-inside:avoid;margin-bottom:1rem;position:relative;overflow:hidden;cursor:pointer;}
+.photo-block img{width:100%;display:block;transition:transform .5s;filter:grayscale(8%) contrast(1.04);}
+.photo-block:hover img{transform:scale(1.04);filter:grayscale(0%);}
+.photo-cap{position:absolute;bottom:0;left:0;right:0;padding:1.5rem .8rem .6rem;background:linear-gradient(to top,rgba(15,23,42,.9),transparent);font-size:.6rem;font-weight:500;color:var(--ts);letter-spacing:.07em;text-transform:uppercase;opacity:0;transition:opacity .3s;}
+.photo-block:hover .photo-cap{opacity:1;}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2rem;}
+.proj-card{background:var(--bgc);padding:2.5rem;transition:background .3s;}
+.proj-card:hover{background:var(--bge);}
+.proj-num{font-family:'Montserrat',sans-serif;font-size:2.8rem;font-weight:900;color:var(--brd);line-height:1;margin-bottom:1.2rem;transition:color .3s;}
+.proj-card:hover .proj-num{color:var(--acc);}
+.proj-title{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:700;color:var(--tp);margin-bottom:.35rem;line-height:1.3;}
+.proj-period{font-size:.62rem;font-weight:600;color:var(--acc);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;}
+.proj-desc{font-size:.83rem;color:var(--ts);line-height:1.8;margin-bottom:1rem;}
+.proj-outcomes{border-top:1px solid var(--brd);padding-top:.8rem;}
+.proj-outcome{display:flex;align-items:flex-start;gap:.55rem;margin-bottom:.45rem;font-size:.78rem;color:var(--ts);}
+.proj-outcome::before{content:'→';color:var(--acc);font-family:'Montserrat',sans-serif;font-size:.68rem;flex-shrink:0;}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.skill-card{background:var(--bgc);border:1px solid var(--brd);padding:1.8rem;transition:border-color .3s;}
+.skill-card:hover{border-color:var(--brda);}
+.skill-icon{font-size:1.4rem;margin-bottom:.7rem;}
+.skill-title{font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:700;color:var(--tp);margin-bottom:.7rem;}
+.skill-list{list-style:none;}
+.skill-list li{font-size:.7rem;color:var(--tm);padding-left:.8rem;position:relative;margin-bottom:.35rem;}
+.skill-list li::before{content:'▸';position:absolute;left:0;color:var(--acc);font-size:.58rem;}
+.mindset-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2rem;}
+.mindset-card{background:var(--bgc);border:1px solid var(--brd);padding:1.8rem;}
+.mindset-icon{font-size:1.6rem;margin-bottom:.8rem;}
+.mindset-title{font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:700;color:var(--tp);margin-bottom:.45rem;}
+.mindset-text{font-size:.82rem;color:var(--ts);line-height:1.75;}
+.vision-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;}
+.vision-goals{list-style:none;}
+.vision-goals li{display:flex;align-items:flex-start;gap:.9rem;font-size:.85rem;color:var(--ts);padding:1rem 1.3rem;background:var(--bgc);border:1px solid var(--brd);margin-bottom:.8rem;transition:border-color .3s;line-height:1.6;}
+.vision-goals li:hover{border-color:var(--brda);}
+.vision-goals li::before{content:'⟶';color:var(--acc);font-family:'Montserrat',sans-serif;flex-shrink:0;}
+.contact-wrap{text-align:center;padding:5rem;background:var(--bg2);position:relative;overflow:hidden;}
+.contact-wrap::before{content:'MINING';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Montserrat',sans-serif;font-size:10rem;font-weight:900;color:rgba(255,255,255,.018);white-space:nowrap;pointer-events:none;}
+.contact-title{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:var(--tp);margin-bottom:.4rem;}
+.contact-sub{color:var(--ts);font-style:italic;margin-bottom:2.2rem;font-size:.9rem;}
+.contact-links{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;position:relative;}
+.contact-link{display:flex;flex-direction:column;align-items:center;gap:.3rem;text-decoration:none;padding:1.1rem 1.7rem;border:1px solid var(--brd);transition:all .3s;}
+.contact-link:hover{border-color:var(--brda);background:var(--accg);}
+.cl-lbl{font-family:'Montserrat',sans-serif;font-size:.56rem;font-weight:600;color:var(--tm);text-transform:uppercase;letter-spacing:.12em;}
+.cl-val{font-size:.82rem;color:var(--ts);}
+.contact-link:hover .cl-val{color:var(--acc);}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:9999;justify-content:center;align-items:center;}
+.lightbox.active{display:flex;}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;}
+.lb-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:1px solid var(--brd);color:var(--ts);font-family:'Montserrat',sans-serif;font-size:.7rem;padding:.5rem 1rem;cursor:pointer;letter-spacing:.1em;font-weight:600;}
+footer{background:var(--bg);padding:1.8rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--brd);position:relative;z-index:2;}
+footer p{font-size:.65rem;color:var(--tm);font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:.05em;}
+.quote-block{border-left:3px solid var(--acc);padding:1.3rem 1.8rem;background:var(--bge);margin:1.5rem 0;}
+.quote-text{font-size:1rem;color:var(--tp);font-style:italic;line-height:1.7;margin-bottom:.4rem;}
+.quote-attr{font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:600;color:var(--acc);letter-spacing:.12em;text-transform:uppercase;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-l{opacity:0;transform:translateX(-24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal-l.visible{opacity:1;transform:translateX(0);}
+.reveal-r{opacity:0;transform:translateX(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal-r.visible{opacity:1;transform:translateX(0);}
+@media(max-width:1024px){
+nav{padding:1rem 1.5rem;}
+.nav-links{display:none;}
+.hero{grid-template-columns:1fr;}
+.hero-right{display:none;}
+.hero-left{padding:7rem 1.5rem 3rem;}
+.sec{padding:4rem 1.5rem;}
+.sec-inner{padding:0 1.5rem;}
+.about-grid{grid-template-columns:1fr;gap:3rem;}
+.tl::before{left:0;}
+.tl-item{grid-template-columns:1fr;}
+.tl-item::before{left:-4px;}
+.tl{padding-left:1.5rem;}
+.ach-grid{grid-template-columns:1fr;}
+.vol-grid{grid-template-columns:1fr;}
+.learn-row{grid-template-columns:repeat(2,1fr);}
+.certs-grid{grid-template-columns:repeat(2,1fr);}
+.proj-grid{grid-template-columns:1fr;}
+.skills-grid{grid-template-columns:1fr;}
+.mindset-grid{grid-template-columns:1fr;}
+.vision-grid{grid-template-columns:1fr;gap:3rem;}
+.masonry{columns:2;}
+.contact-wrap{padding:4rem 1.5rem;}
+footer{flex-direction:column;gap:.8rem;padding:2rem 1.5rem;}
+.exp-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Ayush <span>Chandrakar</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#college">College</a></li>
+    <li><a href="#certs">Credentials</a></li>
+    <li><a href="#fieldwork">Fieldwork</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#vision">Vision</a></li>
+  </ul>
+  <a href="resume.pdf" download="Ayush_Chandrakar_Resume.pdf" class="nav-dl">Download Resume</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-left">
+    <div class="hero-ey">Mining Engineer · Bilaspur, Chhattisgarh</div>
+    <h1 class="hero-name">Ayush<br><span class="hi">Chandrakar</span></h1>
+    <p class="hero-title">Underground Mining · Mine Operations · Mining Technology & Digitalization</p>
+    <p class="hero-desc">From underground seams at SECL to digital dashboards at Coal India sites — building the bridge between traditional coal extraction and the technology transforming how India mines.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">15%</span><span class="stat-label">Extraction efficiency<br>gain · SECL</span></div>
+      <div class="stat"><span class="stat-num">20%</span><span class="stat-label">Productivity uplift<br>demonstrated · CCL</span></div>
+      <div class="stat"><span class="stat-num">8.12</span><span class="stat-label">CGPA · First<br>Honors · B.Tech</span></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#journey" class="btn-p">My Journey</a>
+      <a href="resume.pdf" download="Ayush_Chandrakar_Resume.pdf" class="btn-o">Download Resume</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="images/hero.jpg" alt="Ayush Chandrakar" class="hero-img">
+    <div class="hero-ov"></div>
+    <div class="hero-badge">
+      <div class="hero-badge-top">Second Class Manager's Certificate · CMR 2017</div>
+      <div class="hero-badge-bot">B.Tech Mining Engg · CGPA 8.12 · First Honors · 2023</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="about-grid reveal">
+    <div class="about-photo-wrap">
+      <img src="images/about.jpg" alt="Ayush Chandrakar" class="about-photo">
+      <div class="about-accent"></div>
+    </div>
+    <div class="about-text">
+      <div class="lbl">About Me</div>
+      <h2 class="sec-title">A Mining Engineer Who Went <span class="em">Underground</span></h2>
+      <p class="lead">Mining engineering isn't just a profession — it's a commitment to working in some of the most demanding environments on earth. I was drawn to the engineering problems that live deep below the surface: how do you move thousands of tonnes of coal safely, efficiently, and without disrupting the rock mass above you?</p>
+      <p>My journey began with a CGPA of 9.0 in Class 10 and progressed through a rigorous four-year B.Tech in Mining Engineering at Rungta College, Bhilai — graduating with CGPA 8.12 in the First (Honors) division. I have walked the entries of the Kurja Underground Mine under SECL, deployed fleet-tracking technology at Coal India sites, and earned every statutory certification required of a serious underground mining professional in India.</p>
+      <p>Each phase has layered my thinking about mining — not just as extraction, but as a system of people, machines, safety, and data working together.</p>
+      <div class="chips">
+        <span class="chip">Second Class Manager's Cert · CMR 2017</span>
+        <span class="chip">Gas Testing Cert · DGMS</span>
+        <span class="chip">First Aid Certificate</span>
+        <span class="chip">B.Tech Mining · First Honors</span>
+        <span class="chip">CGPA 8.12 · CSVTU 2023</span>
+        <span class="chip">DOB: 30 Aug 2001 · Bilaspur, C.G.</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- FULL JOURNEY TIMELINE -->
+<div class="sec-full bg-dark" id="journey">
+  <div class="sec-inner">
+    <div class="lbl">Professional Journey</div>
+    <h2 class="sec-title">From School to <span class="em">Mine</span> — The Complete Journey</h2>
+    <p class="sec-sub">Every stage was deliberate. A CGPA of 9.0 in Class 10, through First Honors engineering, to walking underground at SECL and deploying technology at Coal India mines.</p>
+    <div class="tl">
+
+      <div class="tl-item reveal">
+        <div><div class="tl-yr">2017</div><div class="tl-org">CBSE Class X<br>SK Singhania H.S.<br>Janjgir-Champa, CG</div></div>
+        <div>
+          <div class="tl-h3">Class 10 — CBSE · CGPA 9.0</div>
+          <p class="tl-p">Completed Class 10 under CBSE achieving a CGPA of 9.0 across English, Hindi, Mathematics, Science, and Social Science. Roll No. 6158414. This early academic discipline set the standard and trajectory for everything that followed in engineering.</p>
+          <div class="tl-stat"><div class="tl-stat-n">9.0</div><div class="tl-stat-t">CGPA · CBSE Class 10 · 2017</div></div>
+          <div class="tl-tags"><span class="tl-tag">CBSE Board</span><span class="tl-tag">Mathematics</span><span class="tl-tag">Science</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div><div class="tl-yr">2019</div><div class="tl-org">CBSE Class XII<br>SK Singhania H.S.<br>Janjgir-Champa, CG</div></div>
+        <div>
+          <div class="tl-h3">Class 12 — CBSE Senior School Certificate</div>
+          <p class="tl-p">Completed the All India Senior School Certificate Examination with Physics, Chemistry, Mathematics, English Core, and Computer Science. Roll No. 6657607. Result: Pass. The PCM + Computer Science combination directly underpins underground mining calculations and the technical nature of engineering work.</p>
+          <div class="tl-tags"><span class="tl-tag">Physics</span><span class="tl-tag">Chemistry</span><span class="tl-tag">Mathematics</span><span class="tl-tag">Computer Science</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div><div class="tl-yr">2019–2023</div><div class="tl-org">B.Tech Mining Engg<br>Rungta College, Bhilai<br>CSVTU</div></div>
+        <div>
+          <div class="tl-h3">B.Tech Mining Engineering — First (Honors)</div>
+          <p class="tl-p">Four years of deep engineering education at Rungta College of Engineering & Technology. The curriculum covered underground mining methods, rock mechanics, ventilation design, drilling and blasting, mining machinery, geotechnical analysis, and mine safety regulation. Graduated First (Honors) division. Beyond academics — won volleyball championship, secured table tennis runner-up position, and volunteered as event coordinator for three years.</p>
+          <div class="exp-box"><div class="exp-grid">
+            <div><div class="exp-lbl">University</div><div class="exp-val">CSVTU, Bhilai (C.G.)</div></div>
+            <div><div class="exp-lbl">Final CGPA</div><div class="exp-val">8.12 / 10</div></div>
+            <div><div class="exp-lbl">Division</div><div class="exp-val">First (Honors)</div></div>
+            <div><div class="exp-lbl">Final SPI</div><div class="exp-val">8.28</div></div>
+            <div><div class="exp-lbl">Enrollment</div><div class="exp-val">BH5333</div></div>
+            <div><div class="exp-lbl">Session</div><div class="exp-val">2022–2023</div></div>
+          </div></div>
+          <div class="tl-tags"><span class="tl-tag">Underground Mining</span><span class="tl-tag">Mine Planning</span><span class="tl-tag">Ventilation</span><span class="tl-tag">Drilling & Blasting</span><span class="tl-tag">Rock Mechanics</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div><div class="tl-yr">Jul 2022</div><div class="tl-org">Mining Solution First Aid<br>Training Center<br>Raipur · DGMS Approved</div></div>
+        <div>
+          <div class="tl-h3">First Aid Certificate — DGMS Approved</div>
+          <p class="tl-p">Completed formal First Aid training at DGMS-approved Mining Solution First Aid Training Center, Raipur. Cert No. VFA MS/052201188. Qualified to render First Aid to injured personnel. Obtained proactively during final B.Tech year to be fully prepared for mine entry from day one.</p>
+          <div class="tl-tags"><span class="tl-tag">First Aid</span><span class="tl-tag">DGMS Approved</span><span class="tl-tag">Mine Safety</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div><div class="tl-yr">Jul 2024 –<br>Jul 2025</div><div class="tl-org">Post-Graduate Practical Training<br>South Eastern Coalfields Ltd<br>Kurja UG Mine · Bijuri, MP</div></div>
+        <div>
+          <div class="tl-h3">Underground at SECL — 12 Months Inside the Mine</div>
+          <p class="tl-p">Twelve months of structured underground mine training at Kurja UG Mine, SECL. Covered Mine Planning & Surveying (2 months), Mine Ventilation (2 months), Support System & Strata (2 months), Continuous Miner Operations (4 months), and Production & Transportation (2 months). Average monthly output: 65,334 tonnes. Daily employment: 360 workers.</p>
+          <p class="tl-p">Analyzed the Bord and Pillar production cycle and identified process improvements that increased coal extraction efficiency by 15%.</p>
+          <div class="tl-stat"><div class="tl-stat-n">15%</div><div class="tl-stat-t">Coal extraction efficiency improvement · Bord & Pillar optimization</div></div>
+          <div class="exp-box"><div class="exp-grid">
+            <div><div class="exp-lbl">Mine</div><div class="exp-val">Kurja U/G Mine, SECL</div></div>
+            <div><div class="exp-lbl">Duration</div><div class="exp-val">16/07/2024–15/07/2025</div></div>
+            <div><div class="exp-lbl">Mine Type</div><div class="exp-val">Underground Coal</div></div>
+            <div><div class="exp-lbl">Monthly Output</div><div class="exp-val">65,334 Tonnes</div></div>
+            <div><div class="exp-lbl">Daily Employment</div><div class="exp-val">360 Workers</div></div>
+            <div><div class="exp-lbl">LIN</div><div class="exp-val">1-2350-8743-0</div></div>
+          </div></div>
+          <div class="tl-tags"><span class="tl-tag">Bord & Pillar</span><span class="tl-tag">Continuous Miner</span><span class="tl-tag">UG Ventilation</span><span class="tl-tag">Roof Support</span><span class="tl-tag">CMR 2017</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div><div class="tl-yr">Nov 2024</div><div class="tl-org">Board of Mining Examinations<br>Government of India<br>Mines Act 1952</div></div>
+        <div>
+          <div class="tl-h3">Gas Testing Certificate — DGMS · Board of Mining Examinations</div>
+          <p class="tl-p">Gas Testing Certificate of Competency (Provisional) from the Board of Mining Examinations, Govt. of India. Cert No. GT-E/24121712500013163, effective 02-11-2024. Competency in detecting and measuring dangerous underground gases — methane, CO₂, CO. Mandatory before supervising underground workings in any Indian coal mine.</p>
+          <div class="tl-tags"><span class="tl-tag">DGMS</span><span class="tl-tag">Mines Act 1952</span><span class="tl-tag">Gas Detection</span><span class="tl-tag">Underground Safety</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div><div class="tl-yr">Jul 2025 /<br>Jan 2026</div><div class="tl-org">Board of Mining Examinations<br>Government of India<br>CMR 2017</div></div>
+        <div>
+          <div class="tl-h3">Second Class Manager's Certificate of Competency</div>
+          <p class="tl-p">Awarded the Second Class Manager's Certificate of Competency to manage Coal Mines under CMR 2017. Cert No. SCU-E/25101506190022854, effective 16-07-2025, issued 21-01-2026. Signed by the Secretary and Chairman of the Board of Mining Examinations. This certificate legally authorizes managing underground coal mine operations — the culmination of years of study, practical experience, and statutory examination.</p>
+          <div class="tl-stat"><div class="tl-stat-n">SCM</div><div class="tl-stat-t">Second Class Manager's Certificate · Coal Mines Regulations 2017</div></div>
+          <div class="tl-tags"><span class="tl-tag">Mine Management</span><span class="tl-tag">CMR 2017</span><span class="tl-tag">Coal India</span><span class="tl-tag">Govt. of India</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div><div class="tl-yr">Jan–Apr 2026</div><div class="tl-org">Operations Executive<br>KiarX — Mining Digitalization<br>Ahmedabad, Gujarat</div></div>
+        <div>
+          <div class="tl-h3">Mining Technology — Where Data Meets the Mine Floor</div>
+          <p class="tl-p">Joined KiarX as Operations Executive monitoring 5+ active Coal India and SECL mine sites via live fleet tracking. Generated daily MIS reports, identified operational delays averaging 2–3 per site per week, and served as sole point of contact between field teams, clients, and technical support. Led full technology deployment at BKT Minetech Pvt. Ltd. (CCL Govindpur) within a 3-month window, demonstrating a 20% potential improvement in daily mine output.</p>
+          <div class="tl-stat"><div class="tl-stat-n">20%</div><div class="tl-stat-t">Production uplift demonstrated at CCL Govindpur through fleet optimization</div></div>
+          <div class="tl-tags"><span class="tl-tag">Fleet Telematics</span><span class="tl-tag">Site Deployment</span><span class="tl-tag">MIS Reporting</span><span class="tl-tag">Mining Digitalization</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- COLLEGE ACHIEVEMENTS - CARD-BASED, NO PHOTOS -->
+<section class="sec" id="college">
+  <div class="lbl">College Life</div>
+  <h2 class="sec-title">Beyond the <span class="em">Classroom</span></h2>
+  <p class="sec-sub">Rungta College was not just where I studied mining engineering. It was where I learned how to compete, lead without being asked, and build the interpersonal foundations that carry into every professional environment.</p>
+
+  <div class="quote-block reveal">
+    <p class="quote-text">"I didn't just study mining engineering at Rungta College. I learned how to solve problems, work in a team under pressure, lead when nobody asked me to, and compete without losing sight of why I was there."</p>
+    <span class="quote-attr">— Ayush Chandrakar · Rungta College of Engineering & Technology · 2019–2023</span>
+  </div>
+
+  <div class="lbl" style="margin-top:3rem;">Sports Achievements</div>
+  <h3 style="font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:700;color:var(--tp);margin-bottom:.8rem;">Competitive Spirit on the Court</h3>
+  <p style="font-size:.85rem;color:var(--ts);line-height:1.8;margin-bottom:1.8rem;max-width:680px;">During the annual college festivals at Rungta College, I competed — and won. Sports taught me things engineering classrooms cannot: how to read a team, how to stay calm under pressure, and how to fight for results when the margin is thin.</p>
+
+  <div class="ach-grid reveal">
+    <div class="ach-card">
+      <span class="ach-icon">🏐</span>
+      <span class="ach-badge">🥇 1st Position · Annual Fest · Year 1</span>
+      <div class="ach-title">Volleyball Champion</div>
+      <p class="ach-story">In my very first year at Rungta College, I competed in the Annual College Festival volleyball competition against teams from across the campus. Volleyball demands constant communication, spatial awareness, and collective decision-making. Winning 1st position in that first year proved that a team that communicates well can outperform individually stronger opponents — a lesson I've applied in every team environment since, from mine sites to client deployments.</p>
+      <div class="ach-skills"><span class="ach-skill">Teamwork</span><span class="ach-skill">Communication</span><span class="ach-skill">Strategic Thinking</span><span class="ach-skill">Resilience</span></div>
+    </div>
+    <div class="ach-card">
+      <span class="ach-icon">🏓</span>
+      <span class="ach-badge">🥈 2nd Position · College Competition</span>
+      <div class="ach-title">Table Tennis Runner-Up</div>
+      <p class="ach-story">Table tennis is entirely individual — you read your opponent's paddle angle, predict the spin, and respond in fractions of a second. Securing 2nd position in the college table tennis competition required months of disciplined practice, refined technique, and mental composure in close matches. The same qualities that make a good table tennis player — quick pattern recognition, precise decision-making, and composure under observation — are exactly what underground mining demands.</p>
+      <div class="ach-skills"><span class="ach-skill">Focus</span><span class="ach-skill">Discipline</span><span class="ach-skill">Quick Decisions</span><span class="ach-skill">Composure</span></div>
+    </div>
+    <div class="ach-card">
+      <span class="ach-icon">🎭</span>
+      <span class="ach-badge">Cultural Participation · College Festivals</span>
+      <div class="ach-title">Cultural Programs & Campus Engagement</div>
+      <p class="ach-story">College festivals at Rungta were more than competitions — they were where I learned to engage with students from different backgrounds and disciplines. Participating in cultural events required confidence in unfamiliar situations and the willingness to contribute to something larger than any individual performance. These experiences built the interpersonal foundations that later shaped how I communicate with clients, field staff, and mine management in professional settings.</p>
+      <div class="ach-skills"><span class="ach-skill">Confidence</span><span class="ach-skill">Social Awareness</span><span class="ach-skill">Collaboration</span><span class="ach-skill">Adaptability</span></div>
+    </div>
+    <div class="ach-card">
+      <span class="ach-icon">🤝</span>
+      <span class="ach-badge">Years 2, 3 & 4 · Leadership Role</span>
+      <div class="ach-title">Volunteer Event Coordinator — 3 Consecutive Years</div>
+      <p class="ach-story">For three consecutive years, I volunteered as an event coordinator during college festivals and institutional programs. Responsibilities grew each year — from managing logistics in Year 2, to coordinating between multiple event teams and faculty in Year 3, to full accountability for entire event sections and direct communication with senior college authorities in Year 4. What I took from this: how to plan under uncertainty, keep teams moving when things go off-schedule, and stay accountable when others are looking to you for direction.</p>
+      <div class="ach-skills"><span class="ach-skill">Event Planning</span><span class="ach-skill">Leadership</span><span class="ach-skill">Team Coordination</span><span class="ach-skill">Stakeholder Communication</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:3.5rem;">
+    <div class="lbl">Volunteer Journey</div>
+    <h3 style="font-family:'Montserrat',sans-serif;font-size:1.15rem;font-weight:700;color:var(--tp);margin-bottom:1rem;">Three Years of Growing Responsibility</h3>
+    <div class="vol-grid reveal">
+      <div class="vol-card">
+        <div class="vol-yr">Year 2</div>
+        <div class="vol-title">First Volunteer Role</div>
+        <ul class="vol-list">
+          <li>Assisted in logistics for college fest events</li>
+          <li>Supported senior organizers in managing student volunteers</li>
+          <li>Ensured smooth on-ground event execution</li>
+          <li>Learned how large events are planned from the ground up</li>
+        </ul>
+      </div>
+      <div class="vol-card">
+        <div class="vol-yr">Year 3</div>
+        <div class="vol-title">Coordinator Role</div>
+        <ul class="vol-list">
+          <li>Direct coordination between event teams</li>
+          <li>Communicated with faculty to align planning and execution</li>
+          <li>Managed a group of junior volunteers during event days</li>
+          <li>Learned to lead without authority and communicate upward</li>
+        </ul>
+      </div>
+      <div class="vol-card">
+        <div class="vol-yr">Year 4</div>
+        <div class="vol-title">Senior Coordinator</div>
+        <ul class="vol-list">
+          <li>Coordinated directly with senior college authorities</li>
+          <li>Planned and assigned responsibilities across multiple teams</li>
+          <li>Took full accountability for entire event sections</li>
+          <li>Learned full-cycle ownership and escalation management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;">
+    <div class="lbl">Personal Development</div>
+    <h3 style="font-family:'Montserrat',sans-serif;font-size:1.15rem;font-weight:700;color:var(--tp);margin-bottom:1rem;">What Four Years Built</h3>
+    <div class="learn-row reveal">
+      <div class="learn-pill"><div class="learn-icon">⚙️</div><div class="learn-text">Engineering mindset — analyze failure, find the fix</div></div>
+      <div class="learn-pill"><div class="learn-icon">🧩</div><div class="learn-text">Team intelligence — different people, one outcome</div></div>
+      <div class="learn-pill"><div class="learn-icon">🎯</div><div class="learn-text">Competitive focus — results without losing the process</div></div>
+      <div class="learn-pill"><div class="learn-icon">📋</div><div class="learn-text">Coordination skills — multiple moving parts under pressure</div></div>
+    </div>
+
+  <div style="margin-top:2.5rem;">
+    <div class="lbl">Campus Moments</div>
+    <h3 style="font-family:'Montserrat',sans-serif;font-size:1.15rem;font-weight:700;color:var(--tp);margin-bottom:1rem;">Life at Rungta College</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;">
+      <div class="photo-block" onclick="openLightbox(this.querySelector('img').src)" style="border-radius:0;">
+        <img src="images/college1.jpg" alt="College life" style="width:100%;height:220px;object-fit:cover;">
+        <div class="photo-cap">Campus Life · Rungta College</div>
+      </div>
+      <div class="photo-block" onclick="openLightbox(this.querySelector('img').src)" style="border-radius:0;">
+        <img src="images/college2.jpg" alt="College events" style="width:100%;height:220px;object-fit:cover;">
+        <div class="photo-cap">Events & Volunteering</div>
+      </div>
+      <div class="photo-block" onclick="openLightbox(this.querySelector('img').src)" style="border-radius:0;">
+        <img src="images/college3.jpg" alt="Sports and activities" style="width:100%;height:220px;object-fit:cover;">
+        <div class="photo-cap">Sports & Campus Activities</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CERTIFICATES -->
+<div class="sec-full bg-card" id="certs">
+  <div class="sec-inner">
+    <div class="lbl">Verified Credentials</div>
+    <h2 class="sec-title">Certificates & <span class="em">Documented Proof</span></h2>
+    <p class="sec-sub">Every credential here is statutory, government-issued, or university-certified. These determine what I am legally authorized to do in an Indian coal mine. Click any card to view the full document.</p>
+
+    <div class="lbl" style="margin-top:1rem;">Professional & Statutory Certifications</div>
+    <div class="certs-grid reveal" style="margin-top:1.2rem;">
+      <div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-preview"><img src="images/cert1.jpg" alt="Second Class Manager's Certificate">
+          <div class="cert-overlay"><div class="cert-info">
+            <span class="cert-name">Second Class Manager's Certificate</span>
+            <span class="cert-issuer">Board of Mining Examinations · Govt. of India · CMR 2017</span>
+          </div></div>
+        </div>
+        <div class="cert-body">
+          <p class="cert-desc">The highest qualification presented here. Under the Coal Mines Regulations 2017, this certificate legally authorizes the holder to manage underground coal mine operations. Cert No. SCU-E/25101506190022854 · Effective 16-07-2025 · Issued 21-01-2026.</p>
+          <div class="cert-importance">One of the most significant statutory qualifications in Indian underground coal mining.</div>
+          <a href="certificates/second_class_manager.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;">&#128196; View Certificate PDF</a>
+        </div>
+      </div><div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-preview"><img src="images/cert2.jpg" alt="Gas Testing Certificate of Competency">
+          <div class="cert-overlay"><div class="cert-info">
+            <span class="cert-name">Gas Testing Certificate of Competency</span>
+            <span class="cert-issuer">Board of Mining Examinations · DGMS · Govt. of India · Mines Act 1952</span>
+          </div></div>
+        </div>
+        <div class="cert-body">
+          <p class="cert-desc">Competency in detecting and measuring dangerous underground gases — methane, CO2, CO. Certificate No. GT-E/24121712500013163. Effective 02-11-2024. Mandatory before supervising underground workings in any Indian coal mine.</p>
+          <div class="cert-importance">No person enters underground workings in a supervisory role without this certification.</div>
+          <a href="certificates/gas_testing_certificate.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;">&#128196; View Certificate PDF</a>
+        </div>
+      </div><div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-preview"><img src="images/cert3.jpg" alt="First Aid Certificate">
+          <div class="cert-overlay"><div class="cert-info">
+            <span class="cert-name">First Aid Certificate</span>
+            <span class="cert-issuer">Mining Solution First Aid Training Center · DGMS Approved · Raipur</span>
+          </div></div>
+        </div>
+        <div class="cert-body">
+          <p class="cert-desc">Completed formal First Aid training at the DGMS-approved Mining Solution First Aid Training Center, Raipur. Cert No. VFA MS/052201188. Qualified to render First Aid to injured personnel at mine sites.</p>
+          <div class="cert-importance">Statutory requirement for all personnel working in Indian coal mines.</div>
+          <a href="certificates/first_aid_certificate.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;">&#128196; View Certificate PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="lbl" style="margin-top:3rem;">Mine Experience Certificate</div>
+    <div class="certs-grid reveal" style="margin-top:1.2rem;">
+      <div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-preview"><img src="images/cert4.jpg" alt="SECL Mine Experience Certificate">
+          <div class="cert-overlay"><div class="cert-info">
+            <span class="cert-name">SECL Mine Experience Certificate</span>
+            <span class="cert-issuer">South Eastern Coalfields Limited · Kurja U/G Mine · Ministry of Labour & DGMS</span>
+          </div></div>
+        </div>
+        <div class="cert-body">
+          <p class="cert-desc">Official experience certificate from Colliery Manager Rajesh Kumar Keshar (FMC-UR) of Kurja U/G Mine, SECL — certifying 12 months of underground practical experience from 16/07/2024 to 15/07/2025. Covers all 5 areas required for Manager's Certificate eligibility.</p>
+          <div class="cert-importance">The verified proof of underground mine experience that qualified the Second Class Manager's Certificate application.</div>
+          <a href="certificates/secl_experience_letter.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;">&#128196; View Certificate PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="lbl" style="margin-top:3rem;">Academic Records</div>
+    <p style="font-size:.85rem;color:var(--ts);margin-bottom:1.2rem;max-width:580px;line-height:1.7;">A transparent professional profile is built on verifiable records at every stage — from school to university degree. These are all original board and university certificates.</p>
+    <div class="certs-grid reveal">
+      <div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-preview"><img src="images/cert5.jpg" alt="B.Tech Degree Certificate">
+          <div class="cert-overlay"><div class="cert-info">
+            <span class="cert-name">B.Tech Degree Certificate</span>
+            <span class="cert-issuer">Chhattisgarh Swami Vivekanand Technical University · 2023</span>
+          </div></div>
+        </div>
+        <div class="cert-body">
+          <p class="cert-desc">Bachelor of Technology in Mining Engineering — First (Honors) Division. Enrollment No. BH5333. Issued by CSVTU, Bhilai on 21/10/2023. Signed by Vice-Chancellor Dr. M. K. Verma. CGPA 8.12.</p>
+          <div class="cert-importance">The formal engineering degree that is the gateway to every mining role in India.</div>
+          <a href="certificates/btech_degree.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;">&#128196; View Certificate PDF</a>
+        </div>
+      </div><div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-preview"><img src="images/cert6.jpg" alt="8th Semester Marksheet">
+          <div class="cert-overlay"><div class="cert-info">
+            <span class="cert-name">8th Semester Marksheet</span>
+            <span class="cert-issuer">CSVTU · B.Tech Mining Engineering · Apr-May 2023</span>
+          </div></div>
+        </div>
+        <div class="cert-body">
+          <p class="cert-desc">Final semester result — SPI 8.28, CPI 8.12. First (Honors) division. Total marks 791/1000. Subjects included Strata Control, Mine Legislation, Mine Machinery Lab, and Project Phase-II (A+ grade). Roll No. 301303919001.</p>
+          <div class="cert-importance">Final semester academic record confirming First Honors at graduation.</div>
+          <a href="certificates/8th_semester_marksheet.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;">&#128196; View Certificate PDF</a>
+        </div>
+      </div><div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-preview"><img src="images/cert7.jpg" alt="CBSE Class 10 Certificate">
+          <div class="cert-overlay"><div class="cert-info">
+            <span class="cert-name">CBSE Class 10 Certificate</span>
+            <span class="cert-issuer">Central Board of Secondary Education · 2017</span>
+          </div></div>
+        </div>
+        <div class="cert-body">
+          <p class="cert-desc">Class X Grade Sheet cum Certificate of Performance, Year 2017. CGPA 9.0. Roll No. 6158414. School: SK Singhania H.S. School, Janjgir-Champa, C.G. All subjects at Grade Point 09.</p>
+          <div class="cert-importance">The starting point — a CGPA of 9.0 that set the standard for everything that followed.</div>
+          <a href="certificates/cbse_class10.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;">&#128196; View Certificate PDF</a>
+        </div>
+      </div><div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-preview"><img src="images/cert8.jpg" alt="CBSE Class 12 Certificate">
+          <div class="cert-overlay"><div class="cert-info">
+            <span class="cert-name">CBSE Class 12 Certificate</span>
+            <span class="cert-issuer">Central Board of Secondary Education · 2019</span>
+          </div></div>
+        </div>
+        <div class="cert-body">
+          <p class="cert-desc">All India Senior School Certificate Examination 2019. Roll No. 6657607. Subjects: English Core, Mathematics, Physics, Chemistry, Computer Science. Result: PASS. School: SK Singhania H.S. School.</p>
+          <div class="cert-importance">PCM + Computer Science background that directly supports engineering and mine calculations.</div>
+          <a href="certificates/cbse_class12.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--acc);color:#0F172A;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;">&#128196; View Certificate PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- FIELDWORK PHOTOS -->
+<section class="sec" id="fieldwork">
+  <div class="lbl">From the Field</div>
+  <h2 class="sec-title">Evidence of the <span class="em">Work</span></h2>
+  <p class="sec-sub">Not stock images. Every photograph was taken at a real mine site — a real moment from the journey of learning this industry from the inside.</p>
+  <div class="masonry reveal">
+    <div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine1.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Mine Site Operations</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine2.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Mining Equipment · Site Survey</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine3.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Underground Mine · Kurja UG Mine, SECL</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine4.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Site Deployment · BKT Minetech</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine5.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Engineering Fieldwork · CCL</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine6.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Mine Operations · Active Site</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine7.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Underground Workings · SECL</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine8.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Field Operations · KiarX</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine9.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">CCL Mine Visit</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine10.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Site Monitoring · Fleet Tracking</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine11.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Mine Site · Operational Review</div>
+    </div>
+<div class="photo-block" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="images/mine12.jpg" alt="Mining fieldwork">
+      <div class="photo-cap">Field Verification · Equipment</div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section class="sec" id="projects">
+  <div class="lbl">Engineering Projects</div>
+  <h2 class="sec-title">Work That <span class="em">Moved the Needle</span></h2>
+  <div class="proj-grid reveal">
+    <div class="proj-card">
+      <div class="proj-num">01</div>
+      <div class="proj-title">KiarX Fleet Technology Deployment — BKT Minetech, CCL Govindpur</div>
+      <div class="proj-period">January – April 2026</div>
+      <div class="proj-desc">Complete greenfield technology deployment at an active Coal India underground mining site — no existing hardware, software, or protocols. Covered site survey, device placement planning, hardware installation across the mine fleet, full software commissioning, data validation, MIS automation, and client training. Built a productivity model showing exactly where fleet time was lost.</div>
+      <div class="proj-outcomes">
+        <div class="proj-outcome">End-to-end deployment within 3-month window</div>
+        <div class="proj-outcome">100% data accuracy from day one of live operation</div>
+        <div class="proj-outcome">20% productivity improvement demonstrated to management</div>
+        <div class="proj-outcome">Manual MIS replaced with automated daily reporting</div>
+        <div class="proj-outcome">10+ operators and supervisors trained on system</div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-num">02</div>
+      <div class="proj-title">Improving Availability & Utilization of SDL in Indian Coal Mines</div>
+      <div class="proj-period">March – May 2023</div>
+      <div class="proj-desc">SDL breakdown patterns across multiple Indian coal mines traced back to reactive maintenance, poor spare parts management, and no working-hours tracking. Project proposed a Proactive Maintenance System built around CBM to shift from responding to failures to predicting them — a scalable framework for the entire Indian underground coal sector.</div>
+      <div class="proj-outcomes">
+        <div class="proj-outcome">Proactive maintenance framework designed for SDL fleet</div>
+        <div class="proj-outcome">Working-hours tracking model enabling predictive scheduling</div>
+        <div class="proj-outcome">Estimated 25–30% reduction in unplanned downtime through CBM</div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-num">03</div>
+      <div class="proj-title">Utilization & Safety Aspects of Underground Mine Methods in Indian Coal Mines</div>
+      <div class="proj-period">February – March 2022</div>
+      <div class="proj-desc">Comparative study of Bord & Pillar and Longwall methods across productivity and safety. Identified structural barriers to mass production technology adoption and explored how CBM, optimized ventilation, and controlled blasting could simultaneously reduce accident rates and improve extraction output — aligned with DGMS guidelines.</div>
+      <div class="proj-outcomes">
+        <div class="proj-outcome">Comparative B&P vs Longwall productivity and safety analysis</div>
+        <div class="proj-outcome">Identified barriers to mass production technology adoption in India</div>
+        <div class="proj-outcome">Integrated safety and productivity improvement framework</div>
+      </div>
+    </div>
+    <div class="proj-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--bge);min-height:260px;">
+      <div style="font-size:2rem;margin-bottom:1.2rem;">⛏</div>
+      <p style="font-size:.95rem;color:var(--ts);font-style:italic;max-width:270px;line-height:1.7;">"Underground mining is not a job for the faint-hearted. Every shift starts with a decision to go deeper, work harder, and come back safely."</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:.58rem;color:var(--tm);letter-spacing:.12em;text-transform:uppercase;margin-top:1.2rem;">— Ayush Chandrakar</p>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<div class="sec-full bg-dark">
+  <div class="sec-inner">
+    <div class="lbl">Technical Competencies</div>
+    <h2 class="sec-title">What I Bring to <span class="em">the Mine</span></h2>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <div class="skill-icon">⛏</div>
+        <div class="skill-title">Underground Mining</div>
+        <ul class="skill-list">
+          <li>Bord & Pillar Method</li><li>Continuous Miner Operations</li>
+          <li>Mine Planning & Design</li><li>Ventilation Management</li>
+          <li>Drilling & Blasting</li><li>Roof Support Systems</li>
+          <li>Geotechnical Analysis</li><li>DGMS Compliance · CMR 2017</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-title">Mining Technology</div>
+        <ul class="skill-list">
+          <li>Fleet Tracking & Telematics</li><li>Remote Site Monitoring</li>
+          <li>Mining Software Deployment</li><li>Operational Data Analysis</li>
+          <li>MIS Reporting</li><li>Productivity & Delay Analysis</li>
+          <li>Client Pain Point Identification</li><li>Relationship Management</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🏗</div>
+        <div class="skill-title">Operations & Management</div>
+        <ul class="skill-list">
+          <li>Site Operations Management</li><li>Safety & Risk Assessment</li>
+          <li>Client Training & Onboarding</li><li>Cross-Functional Coordination</li>
+          <li>Project Management</li><li>Condition-Based Maintenance</li>
+          <li>Event & Volunteer Leadership</li><li>Underground Inspections</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- MINDSET -->
+<section class="sec">
+  <div class="lbl">Personal Philosophy</div>
+  <h2 class="sec-title">The Mindset That <span class="em">Drives the Work</span></h2>
+  <p class="sec-sub">Skills and qualifications can be measured. What is harder to measure — but ultimately more important — is how someone approaches the work.</p>
+  <div class="mindset-grid reveal">
+    <div class="mindset-card">
+      <div class="mindset-icon">🔍</div>
+      <div class="mindset-title">Curiosity First</div>
+      <p class="mindset-text">I'm drawn to the question underneath the question. Not just "why did the machine break down" but "what in our maintenance process allowed it to reach that point." That curiosity is what made me study mining engineering, and what made me want to understand digital fleet systems on top of underground operations.</p>
+    </div>
+    <div class="mindset-card">
+      <div class="mindset-icon">📐</div>
+      <div class="mindset-title">Precision Without Shortcuts</div>
+      <p class="mindset-text">In a coal mine, a shortcut is not a time-saver — it's a safety risk. I carry that standard into every piece of work. Whether achieving 100% data accuracy on the KiarX deployment or ensuring every gas test at SECL was correctly documented, I don't look for the path of least resistance when precision matters.</p>
+    </div>
+    <div class="mindset-card">
+      <div class="mindset-icon">🌱</div>
+      <div class="mindset-title">Always Learning</div>
+      <p class="mindset-text">I went from classroom theory to underground operations to digital mine monitoring in three years. Each transition required learning an entirely new domain quickly and applying it under real conditions. I don't wait to feel fully ready before taking on new responsibility — I learn by doing, and I iterate.</p>
+    </div>
+    <div class="mindset-card">
+      <div class="mindset-icon">🤝</div>
+      <div class="mindset-title">Ownership Over Output</div>
+      <p class="mindset-text">I take personal responsibility for outcomes. Whether leading the BKT Minetech deployment independently within three months or managing full event coordination as a college volunteer with no template to follow — I find it more natural to own a problem than to wait for someone else to solve it.</p>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- VISION -->
+<section class="sec" id="vision">
+  <div class="vision-grid">
+    <div class="reveal-l">
+      <div class="lbl">Looking Forward</div>
+      <h2 class="sec-title">Where I'm <span class="em">Headed</span></h2>
+      <p style="font-size:.9rem;color:var(--ts);line-height:1.85;margin-bottom:1.2rem;">Mining in India is at a crossroads. The demand for coal is not disappearing — it is the backbone of the country's energy grid — but the industry is under real pressure to produce more safely, more efficiently, and with better visibility into what is actually happening underground.</p>
+      <p style="font-size:.9rem;color:var(--ts);line-height:1.85;margin-bottom:2rem;">I want to be an engineer who helps solve that problem. Deep domain knowledge plus technology fluency — that combination is rare in Indian mining, and it is what I am building toward.</p>
+      <a href="resume.pdf" download="Ayush_Chandrakar_Resume.pdf" class="btn-p">Download Resume</a>
+    </div>
+    <ul class="vision-goals reveal-r">
+      <li>Become a high-competency underground mining engineer with operational leadership experience at a major Indian coal company</li>
+      <li>Contribute to measurable safety and extraction efficiency improvements across Coal India operations</li>
+      <li>Build expertise integrating digital monitoring and fleet optimization into real mine operations</li>
+      <li>Progress toward mine planning and eventually mine management roles</li>
+      <li>Help close the gap between how Indian coal mines operate today and how they could with better data</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <h2 class="contact-title">Open to Opportunities</h2>
+  <p class="contact-sub">Underground mining · Mine planning · Mining technology · Across India</p>
+  <div class="contact-links">
+    <a href="tel:+919399190074" class="contact-link"><span class="cl-lbl">Phone</span><span class="cl-val">+91 93991 90074</span></a>
+    <a href="mailto:ayushchandrakar1111@gmail.com" class="contact-link"><span class="cl-lbl">Email</span><span class="cl-val">ayushchandrakar1111@gmail.com</span></a>
+    <a href="https://www.linkedin.com/in/ayushchandrakar" target="_blank" class="contact-link"><span class="cl-lbl">LinkedIn</span><span class="cl-val">linkedin.com/in/ayushchandrakar</span></a>
+    <a href="resume.pdf" download="Ayush_Chandrakar_Resume.pdf" class="contact-link"><span class="cl-lbl">Resume</span><span class="cl-val">Download PDF</span></a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ayush Chandrakar · Mining Engineer · Bilaspur, Chhattisgarh</p>
+  <p>B.Tech Mining Engineering · CGPA 8.12 · First Honors · CSVTU 2023</p>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">CLOSE ✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.07});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => obs.observe(el));
+
+function openLightbox(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+</script>
+</body>
+</html>
